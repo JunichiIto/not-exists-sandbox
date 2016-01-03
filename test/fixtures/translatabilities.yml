@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  phrase_id: 
-  translation_id: 
-
-two:
-  phrase_id: 
-  translation_id: 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160103220757) do
+ActiveRecord::Schema.define(version: 20160104001330) do
 
   create_table "phrases", force: :cascade do |t|
     t.string   "name"
@@ -28,12 +28,6 @@ ActiveRecord::Schema.define(version: 20160103220757) do
 
   add_index "translatabilities", ["phrase_id"], name: "index_translatabilities_on_phrase_id"
   add_index "translatabilities", ["translation_id"], name: "index_translatabilities_on_translation_id"
-
-  create_table "translations", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "voices", force: :cascade do |t|
     t.string   "name"

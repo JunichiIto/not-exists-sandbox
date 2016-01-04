@@ -3,7 +3,7 @@ require 'test_helper'
 class PhraseTest < ActiveSupport::TestCase
   test '特定のPhraseのTranslationが存在し、そのVoiceが一つもない要素を取得したい' do
     phrase_with_voice_and_translation = Phrase.create! name: 'Voiceあり、Translationあり'
-    translation = Translation.create! name: '翻訳１'
+    translation = Phrase.create! name: '翻訳１'
     Translatability.create! phrase: phrase_with_voice_and_translation, translation: translation
     phrase_with_voice_and_translation.voices.create! name: '音声１'
 

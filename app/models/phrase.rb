@@ -1,6 +1,6 @@
 class Phrase < ActiveRecord::Base
   has_many :translatabilities
-  has_many :translations, through: :translatabilities
+  has_many :translations, through: :translatabilities, class_name: 'Phrase'
   has_many :voices
 
   # 特定のPhraseのTranslationが存在し、そのVoiceが一つもない要素を取得したい
@@ -9,7 +9,7 @@ class Phrase < ActiveRecord::Base
 EXISTS (
   SELECT *
   FROM translatabilities ta
-  INNER JOIN translations t
+  INNER JOIN phrases t
   ON t.id = ta.translation_id
   WHERE
   ta.phrase_id = phrases.id
